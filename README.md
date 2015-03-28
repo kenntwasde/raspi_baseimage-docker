@@ -1,4 +1,8 @@
-# A minimal Ubuntu base image modified for Docker-friendliness
+# A minimal <strike>Ubuntu</strike>Raspbian (armvl) base image modified for Docker-friendliness
+
+### Changes
+ * 28.03.2015/nie
+ ** forked from [https://github.com/phusion/baseimage-docker.git](https://github.com/phusion/baseimage-docker.git) 
 
 Baseimage-docker is a special [Docker](https://www.docker.com) image that is configured for correct use within Docker containers. It is Ubuntu, plus:
 
