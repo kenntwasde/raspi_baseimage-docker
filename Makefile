@@ -1,5 +1,5 @@
-NAME = phusion/baseimage
-VERSION = 0.9.16
+NAME = kenntwas/raspi_baseimage-docker
+VERSION = jessie_0.9.17
 
 .PHONY: all build test tag_latest release ssh
 
