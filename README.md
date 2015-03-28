@@ -1,4 +1,4 @@
-# A minimal <strike>Ubuntu</strike>Raspbian (armvl) base image modified for Docker-friendliness
+# A minimal <strike>Ubuntu</strike> Raspbian (armv7l) base image modified for Docker-friendliness
 
 ### Changes
  * 28.03.2015/nie
