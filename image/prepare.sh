@@ -44,8 +44,11 @@ apt-get dist-upgrade -y --no-install-recommends
 ## Fix locale.
 #
 # MN:
-# not found in debian/jessie
+# language-pack-en not found in debian/jessie
 #$minimal_apt_get_install language-pack-en
+$minimal_apt_get_install locales
+# MN in debian language must be enabled
+sed -i 's/# en_US/en_US/' /etc/locale.gen
 locale-gen en_US
 update-locale LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8
 echo -n en_US.UTF-8 > /etc/container_environment/LANG
