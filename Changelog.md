@@ -1,5 +1,6 @@
 ## 9.17 (release date: 2015-03-30)
  * copied image -> image.wheezy (based on resin/rpi-raspbian:wheezy) 
+ - uses python2.7 instead of python3
  * moved  image -> image.jessie (based on resin/rpi-raspbian:jessie)
  * disabled tools (curl less nano vim psmisc)
  * 28.03.2015/nie
