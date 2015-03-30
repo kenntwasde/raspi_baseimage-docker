@@ -1,5 +1,5 @@
-FROM ubuntu:14.04
-MAINTAINER Phusion <info@phusion.nl>
+FROM resin/rpi-raspbian:jessie
+MAINTAINER Michael Nieberg <m.nieberg@gmx.de>
 
 ENV HOME /root
 ADD . /build
