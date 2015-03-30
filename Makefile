@@ -15,6 +15,7 @@ test:
 	env NAME=$(NAME) VERSION=$(VERSION) IMAGE=$(IMAGE) ./test/runner.sh
 
 tag_latest:
+	docker tag -f $(NAME):$(VERSION) $(NAME):$(DEBIAN_VER)
 	docker tag -f $(NAME):$(VERSION) $(NAME):latest
 
 release: test tag_latest
