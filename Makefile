@@ -1,6 +1,6 @@
 NAME = kenntwasde/raspi_baseimage-docker
-#DEBIAN_VER = jessie
-DEBIAN_VER = wheezy
+DEBIAN_VER = jessie
+#DEBIAN_VER = wheezy
 VERSION = $(DEBIAN_VER)_0.9.17
 IMAGE = image.$(DEBIAN_VER)
 
