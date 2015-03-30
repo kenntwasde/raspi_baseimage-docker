@@ -5,7 +5,7 @@
  - forked from [https://github.com/phusion/baseimage-docker.git](https://github.com/phusion/baseimage-docker.git) 
  - see [Changelog.md](Changelog.md) for Changes.
 
-raspi_aseimage-docker is a special [Docker](https://www.docker.com) image that is configured for correct use within Docker containers. It is <strike>Ubuntu</strike> Raspbian, plus:
+raspi_baseimage-docker is a special [Docker](https://www.docker.com) image that is configured for correct use within Docker containers. It is <strike>Ubuntu</strike> Raspbian, plus:
 
  * Modifications for Docker-friendliness.
  * Administration tools that are especially useful in the context of Docker.
