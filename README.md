@@ -5,7 +5,7 @@
  - forked from [https://github.com/phusion/baseimage-docker.git](https://github.com/phusion/baseimage-docker.git) 
  - see [Changelog.md](Changelog.md) for Changes.
 
-Baseimage-docker is a special [Docker](https://www.docker.com) image that is configured for correct use within Docker containers. It is <strike>Ubuntu</strike> Raspbian, plus:
+raspi_aseimage-docker is a special [Docker](https://www.docker.com) image that is configured for correct use within Docker containers. It is <strike>Ubuntu</strike> Raspbian, plus:
 
  * Modifications for Docker-friendliness.
  * Administration tools that are especially useful in the context of Docker.
@@ -13,7 +13,7 @@ Baseimage-docker is a special [Docker](https://www.docker.com) image that is con
 
 You can use it as a base for your own Docker images.
 
-Baseimage-docker is available for pulling from [the Docker registry](https://registry.hub.docker.com/u/phusion/baseimage/)!
+raspi_baseimage-docker is available for pulling from [the Docker registry](https://registry.hub.docker.com/u/kenntwasde/raspi_baseimage-docker/)!
 
 ### What are the problems with the stock <strike>Ubuntu</strike> Raspbian base image?
 
