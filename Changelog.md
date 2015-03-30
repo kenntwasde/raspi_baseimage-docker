@@ -1,9 +1,10 @@
-## not released yet
-
-
+## 9.17 (release date: 2015-03-30)
+ * copied image -> image.wheezy (based on resin/rpi-raspbian:wheezy) 
+ * moved  image -> image.jessie (based on resin/rpi-raspbian:jessie)
+ * disabled tools (curl less nano vim psmisc)
  * 28.03.2015/nie
   forked from [https://github.com/phusion/baseimage-docker.git](https://github.com/phusion/baseimage-docker.git) 
- * tag was: 'rel-0.9.16' (was 1812fbf)
+ - tag was: 'rel-0.9.16' (was 1812fbf)
 
 ## 0.9.16 (release date: 2015-01-20)
 

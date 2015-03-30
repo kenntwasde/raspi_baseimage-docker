@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:jessie
+FROM resin/rpi-raspbian:wheezy
 MAINTAINER Michael Nieberg <m.nieberg@gmx.de>
 
 ENV HOME /root

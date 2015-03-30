@@ -1,12 +1,14 @@
 NAME = kenntwas/raspi_baseimage-docker
-VERSION = jessie_0.9.17
+#DEBIAN_VER = jessie
+DEBIAN_VER = wheezy
+VERSION = ${DEBIAN_VER}.9.17
 
 .PHONY: all build test tag_latest release ssh
 
 all: build
 
 build:
-	docker build -t $(NAME):$(VERSION) --rm image
+	docker build -t $(NAME):$(VERSION) --rm image.${DEBIAN_VER}
 
 test:
 	env NAME=$(NAME) VERSION=$(VERSION) ./test/runner.sh
