@@ -5,7 +5,7 @@
  - forked from [https://github.com/phusion/baseimage-docker.git](https://github.com/phusion/baseimage-docker.git) 
  - see [Changelog.md](Changelog.md) for Changes.
 
-Baseimage-docker is a special [Docker](https://www.docker.com) image that is configured for correct use within Docker containers. It is Ubuntu, plus:
+Baseimage-docker is a special [Docker](https://www.docker.com) image that is configured for correct use within Docker containers. It is <strike>Ubuntu</strike> Raspbian, plus:
 
  * Modifications for Docker-friendliness.
  * Administration tools that are especially useful in the context of Docker.
@@ -15,9 +15,9 @@ You can use it as a base for your own Docker images.
 
 Baseimage-docker is available for pulling from [the Docker registry](https://registry.hub.docker.com/u/phusion/baseimage/)!
 
-### What are the problems with the stock Ubuntu base image?
+### What are the problems with the stock <strike>Ubuntu</strike> Raspbian base image?
 
-Ubuntu is not designed to be run inside Docker. Its init system, Upstart, assumes that it's running on either real hardware or virtualized hardware, but not inside a Docker container. But inside a container you don't want a full system anyway, you want a minimal system. But configuring that minimal system for use within a container has many strange corner cases that are hard to get right if you are not intimately familiar with the Unix system model. This can cause a lot of strange problems.
+<strike>Ubuntu</strike> Raspbian is not designed to be run inside Docker. Its init system, Upstart, assumes that it's running on either real hardware or virtualized hardware, but not inside a Docker container. But inside a container you don't want a full system anyway, you want a minimal system. But configuring that minimal system for use within a container has many strange corner cases that are hard to get right if you are not intimately familiar with the Unix system model. This can cause a lot of strange problems.
 
 Baseimage-docker gets everything right. The "Contents" section describes all the things that it modifies.
 
@@ -84,14 +84,14 @@ You can configure the stock `ubuntu` image yourself from your Dockerfile, so why
 
 | Component        | Why is it included? / Remarks |
 | ---------------- | ------------------- |
-| Ubuntu 14.04 LTS | The base system. |
+| <strike>Ubuntu</strike> Raspbian 14.04 LTS | The base system. |
 | A **correct** init process | _Main article: [Docker and the PID 1 zombie reaping problem](http://blog.phusion.nl/2015/01/20/docker-and-the-pid-1-zombie-reaping-problem/)._ <br><br>According to the Unix process model, [the init process](https://en.wikipedia.org/wiki/Init) -- PID 1 -- inherits all [orphaned child processes](https://en.wikipedia.org/wiki/Orphan_process) and must [reap them](https://en.wikipedia.org/wiki/Wait_(system_call)). Most Docker containers do not have an init process that does this correctly, and as a result their containers become filled with [zombie processes](https://en.wikipedia.org/wiki/Zombie_process) over time. <br><br>Furthermore, `docker stop` sends SIGTERM to the init process, which is then supposed to stop all services. Unfortunately most init systems don't do this correctly within Docker since they're built for hardware shutdowns instead. This causes processes to be hard killed with SIGKILL, which doesn't give them a chance to correctly deinitialize things. This can cause file corruption. <br><br>Baseimage-docker comes with an init process `/sbin/my_init` that performs both of these tasks correctly. |
 | Fixes APT incompatibilities with Docker | See https://github.com/dotcloud/docker/issues/1024. |
 | syslog-ng | A syslog daemon is necessary so that many services - including the kernel itself - can correctly log to /var/log/syslog. If no syslog daemon is running, a lot of important messages are silently swallowed. <br><br>Only listens locally. All syslog messages are forwarded to "docker logs". |
 | logrotate | Rotates and compresses logs on a regular basis. |
 | SSH server | Allows you to easily login to your container to [inspect or administer](#login_ssh) things. <br><br>_SSH is **disabled by default** and is only one of the methods provided by baseimage-docker for this purpose. The other method is through [docker exec](#login_docker_exec). SSH is also provided as an alternative because `docker exec` comes with several caveats._<br><br>Password and challenge-response authentication are disabled by default. Only key authentication is allowed. |
 | cron | The cron daemon must be running for cron jobs to work. |
-| [runit](http://smarden.org/runit/) | Replaces Ubuntu's Upstart. Used for service supervision and management. Much easier to use than SysV init and supports restarting daemons when they crash. Much easier to use and more lightweight than Upstart. |
+| [runit](http://smarden.org/runit/) | Replaces <strike>Ubuntu</strike> Raspbian's Upstart. Used for service supervision and management. Much easier to use than SysV init and supports restarting daemons when they crash. Much easier to use and more lightweight than Upstart. |
 | `setuser` | A tool for running a command as another user. Easier to use than `su`, has a smaller attack vector than `sudo`, and unlike `chpst` this tool sets `$HOME` correctly. Available as `/sbin/setuser`. |
 
 Baseimage-docker is very lightweight: it only consumes 6 MB of memory.
