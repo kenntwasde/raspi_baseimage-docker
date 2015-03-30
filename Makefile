@@ -1,7 +1,7 @@
 NAME = kenntwas/raspi_baseimage-docker
 #DEBIAN_VER = jessie
 DEBIAN_VER = wheezy
-VERSION = ${DEBIAN_VER}.9.17
+VERSION = ${DEBIAN_VER}_0.9.17
 
 .PHONY: all build test tag_latest release ssh
 
