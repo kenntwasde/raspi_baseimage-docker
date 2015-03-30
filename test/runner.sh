@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+set -v
 
 function abort()
 {
@@ -17,6 +18,7 @@ function cleanup()
 PWD=`pwd`
 
 echo " --> Starting insecure container"
+echo " --> NAME=$NAME, VERSION=$VERSION"
 ID=`docker run -d -v $PWD/test:/test $NAME:$VERSION /sbin/my_init --enable-insecure-key`
 sleep 1
 
