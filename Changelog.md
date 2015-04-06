@@ -1,3 +1,6 @@
+## 9.18 (release date: 2015-03-30)
+ * readded utilities curl,less nano vim psmisc
+
 ## 9.17 (release date: 2015-03-30)
  * copied image -> image.wheezy (based on resin/rpi-raspbian:wheezy) 
  - uses python2.7 instead of python3
