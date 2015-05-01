@@ -1,2 +1,3 @@
-# alway use linux line-endings
-* text eol=lf
+# Disable LF normalization for all files
+* -text
+
